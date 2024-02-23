@@ -1,0 +1,92 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variable' as *;
+
+.header{
+    margin:0 auto;
+    padding: 1rem;
+    @include flex-space-between;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1015px;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 1rem $side-margin-tablet;
+    }
+    @include desktop {
+        padding: 1rem 0;
+    }
+
+    &__logo{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    .search-botton-icon-wrap{
+        position: relative;
+        width: 100%;
+        min-width: 284px;
+        @include tablet {
+            @include flex-space-between;
+            flex-direction: row;
+            align-items: center;
+            width: 464px;
+            
+        }
+        @include desktop{
+            width: 48%;
+        }
+    }
+
+        &__search-bar{
+            display: block;
+            width: 80%;
+            height: 40px;
+            border-radius: 4px; //style-guide
+            border: 1px solid $mercury;
+            margin-right: 1rem;
+            background-image: url(../../assets/images/icons/search.svg);
+            background-repeat: no-repeat;
+            background-position: 17px 11px;
+            background-size: 17px;
+            outline: none;
+            padding: 17px 40px;
+
+            &::placeholder {
+                font-size: 12px;
+              }
+
+            &:focus {
+                border: 2px solid $brainFlix-blue;
+            }
+
+            @include tablet{
+                width: 238px;
+                margin: 0;
+            }
+        }
+        
+        &__upload-button{
+            background-image: url(../../assets/images/icons/upload.svg);
+            background-repeat: no-repeat;
+            background-position: 9px 11px;
+            background-size: 20px;
+        }
+
+        &__icon{
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            @include tablet {
+                position: static;
+            }
+        }
+
+
+}
