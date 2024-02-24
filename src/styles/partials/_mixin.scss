@@ -54,7 +54,7 @@
     font-weight: 700;
 }
 
-@mixin body-copy-tablet {
+@mixin body-font-tablet {
     font-family: 'Avenir-Next';
     font-size: 0.88rem; //14px
     line-height: 1.38rem; //22px
@@ -88,7 +88,7 @@
     font-weight: 700;
 }
 
-@mixin body-copy-mobile {
+@mixin body-font-mobile {
     font-family: 'Avenir-Next';
     font-size: 0.81rem; //13px
     line-height: 1.13rem; //18px

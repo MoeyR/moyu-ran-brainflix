@@ -11,6 +11,13 @@
 }
 
 
+body {
+  @include body-font-mobile;
+  @include tablet {
+      @include body-font-tablet;
+  }
+}
+
 li {
   list-style-type: none;
 }

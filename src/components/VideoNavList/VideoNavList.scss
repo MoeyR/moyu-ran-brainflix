@@ -1,0 +1,13 @@
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variable' as *;
+
+.video-nav-list{
+    padding: $before-headline-mobile $between-components-mobile;
+
+    &__section-title{
+        @include section-header-mobile;
+        font-weight: 600;
+        color: $silver;
+        margin: $between-components-mobile 0;
+    }
+}
