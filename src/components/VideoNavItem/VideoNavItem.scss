@@ -5,6 +5,10 @@
     margin-bottom: 12px;
     max-width: 320px;
 
+    &--clicked{
+        display: none;
+    }
+
     &__image{
         width: 110px;
         height: 64px;

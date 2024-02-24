@@ -1,6 +1,6 @@
 import VideoNavItem from '../VideoNavItem/VideoNavItem';
 import './VideoNavList.scss';
-function VideoNavList({videos}){
+function VideoNavList({videos, activeVideo, updateActiveVideo}){
     return(
         <ul className='video-nav-list'>
             <h2 className='video-nav-list__section-title'>NEXT VIDEOS</h2>
@@ -8,7 +8,9 @@ function VideoNavList({videos}){
                 return (
                     <VideoNavItem 
                         key={video.id} 
-                        video={video}/>
+                        video={video}
+                        isClicked={video.id === activeVideo.id}
+                        updateActiveVideo={updateActiveVideo}/>
                 );
             })}
         </ul>
