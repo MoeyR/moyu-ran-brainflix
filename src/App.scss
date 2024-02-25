@@ -20,3 +20,13 @@
     
   }
 }
+
+.video-details-nav-wrap{
+  max-width: 1102px;
+  margin: 0 auto;
+
+  @include desktop{
+    @include flex-center;
+  }
+}
+

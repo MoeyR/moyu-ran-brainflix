@@ -3,6 +3,7 @@ import videosArr from './data/videos.json';
 import Header from './components/Header/Header.jsx';
 import VideoNavList from './components/VideoNavList/VideoNavList.jsx';
 import { useState } from 'react';
+import VideoDetails from './components/VideoDetails/VideoDetails.jsx';
 
 
 function App() {
@@ -20,14 +21,14 @@ function App() {
         <section className='video-section'>
             <video className='video-section__player' controls poster={activeVideo.image}></video>
         </section>
-        <section>
-          <VideoNavList videos={videosArr} 
+        <section className='video-details-nav-wrap'>
+          <VideoDetails activeVideo={activeVideo}/>
+          <VideoNavList videos={videosArr}
             activeVideo={activeVideo}
             updateActiveVideo={updateActiveVideo}/>
         </section>
       </main>
 
-      
     </>
   );
 }
