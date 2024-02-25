@@ -1,0 +1,9 @@
+@use '../../styles/partials/mixin' as *;
+.comment-list {
+    @include tablet {
+        margin: 0 1rem;
+    }
+    @include desktop {
+        margin: 0;
+    }
+}

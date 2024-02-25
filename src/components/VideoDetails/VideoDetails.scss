@@ -162,13 +162,14 @@
         //Add Comment Section
         .add-comment{
             @include flex-space-between;
+            padding-bottom: $between-components-mobile;
 
             @include tablet {
-                padding: 1rem;
-                border-bottom: 1px solid $mercury;
+                margin: 1rem;
             }
 
             @include desktop{
+                margin: 0;
                 padding: 1rem 0;
             }
 
@@ -180,7 +181,6 @@
                 width: 83%;
 
                 @include tablet {
-                    //width: 645px;
                     width: 93%;
                     display: flex;
                     justify-content: space-around;
@@ -240,6 +240,10 @@
 
                 @include tablet {
                     width: 155px;
+                }
+
+                @include desktop {
+                    margin-right: $between-components-tablet;
                 }
             }
         }

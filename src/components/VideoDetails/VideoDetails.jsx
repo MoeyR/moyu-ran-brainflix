@@ -1,5 +1,6 @@
 import './VideoDetails.scss';
 import videoDetailsArr from '../../data/video-details.json';
+import CommentList from '../CommentList/CommentList';
 
 function VideoDetails({activeVideo}){
 
@@ -34,7 +35,7 @@ function VideoDetails({activeVideo}){
             </section>
             {/* --- Video Comments Section --- */}
             <section className='video-comments'>
-                <section className='add-comment'>
+                <section className='add-comment mercury-border-bottom'>
                     <div className='add-comment__icon user-icon'></div>
                     <section className='add-comment-input-button-wrap'>
                         <div className='add-comment-input-wrap'>
@@ -46,7 +47,7 @@ function VideoDetails({activeVideo}){
                 </section>
 
                 <section>
-                    {/* <CommentList /> */}
+                    <CommentList videoDetailsObj={videoDetailsObj}/>
                 </section>
             </section>
         </section>
