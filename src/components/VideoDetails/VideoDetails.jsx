@@ -10,7 +10,7 @@ function VideoDetails({activeVideo}){
 
     return (
          <section className='video-details-comemnts-section'>
-            {/* video details section */}
+            {/* --- Video Details Section --- */}
             <section className='video-details'>
                 <h1 className='video-details__title'>{videoDetailsObj.title}</h1>
                 <section className='video-data mercury-border-bottom'>
@@ -32,8 +32,23 @@ function VideoDetails({activeVideo}){
                 <p className='video-details__description'>{videoDetailsObj.description}</p>
                 <h3 className='video-details__comments-number'>{videoDetailsObj.comments.length} Comments</h3>
             </section>
-            {/* video comments section */}
-            
+            {/* --- Video Comments Section --- */}
+            <section className='video-comments'>
+                <section className='add-comment'>
+                    <div className='add-comment__icon user-icon'></div>
+                    <section className='add-comment-input-button-wrap'>
+                        <div className='add-comment-input-wrap'>
+                            <p className='add-comment__title'>JOIN THE CONVERSATION</p>
+                            <textarea className='add-comment__input-bar' placeholder="Add a new comment"></textarea>
+                        </div>
+                        <button className='default-button add-comment__button' >COMMENT</button>
+                    </section>
+                </section>
+
+                <section>
+                    {/* <CommentList /> */}
+                </section>
+            </section>
         </section>
     );
 }
