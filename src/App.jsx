@@ -17,6 +17,9 @@ function App() {
     <>
       <Header/>
       <main>
+        <section className='video-section'>
+            <video className='video-section__player' controls poster={activeVideo.image}></video>
+        </section>
         <section>
           <VideoNavList videos={videosArr} 
             activeVideo={activeVideo}
