@@ -1,9 +1,15 @@
 @use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/variable' as *;
+
 .video-nav-item{
     display: flex;
     justify-content: left;
-    margin-bottom: 12px;
+    margin-bottom: 13px;
     max-width: 320px;
+
+    @include tablet{
+        margin-bottom: $between-components-tablet;
+    }
 
     &--clicked{
         display: none;
@@ -19,7 +25,6 @@
     .video-nav-text-wrap{
         @include flex-space-between;
         flex-direction: column;
-        margin: 3px 0;
     }
 
     &__title{
