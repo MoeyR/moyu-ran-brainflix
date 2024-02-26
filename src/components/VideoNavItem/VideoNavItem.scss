@@ -30,5 +30,10 @@
     &__title{
         @include subheader-mobile;
         font-weight: 600;
+
+        @include tablet{
+            @include subheader-tablet;
+            font-weight: 600;
+        }
     }
 }
