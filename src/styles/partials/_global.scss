@@ -13,14 +13,14 @@ body {
 .default-button {
   font-family: 'Avenir-Next';
   width: 100%;
-  height: 40px; //style-guide
-  font-size: 12px;
+  height: 2.5rem; //style-guide
+  font-size: 0.75rem;
   font-weight: 500;
   color: $white;
-  padding-top: 4px;
+  padding-top: 0.25rem;
   margin-top: 1rem;
   border: none;
-  border-radius: 4px; //style-guide
+  border-radius: 0.25rem; //style-guide
   background-color: $brainFlix-blue;
   cursor: pointer;
   
@@ -29,24 +29,24 @@ body {
   }
     
   @include tablet {
-    width: 150px;
-    min-width: 150px; //style-guide
-    padding-left: 32px;
-    padding-right: 32px;
-    background-position: 9px 10px;
+    width: 9.38rem;
+    min-width: 9.38rem; //style-guide
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-position: 0.56rem 0.63rem;
     margin: 0;
   }
   
     @include desktop {
-        margin-right: 10px;
+        margin-right: 0.63rem;
     }
   }
   
 
 .user-icon {
   background-image: url('../../assets/images/pictures/Mohan-muruge.jpg');
-  width: 38px;
-  height: 38px;
+  width: 2.38rem;
+  height: 2.38rem;
   border-radius: 50%;
   background-size: 4.5rem;
   background-position-x: -0.5rem;
@@ -54,11 +54,11 @@ body {
 }  
 
 .default-brainFlix-logo {
-  width: 120px; //style-guide
-  height: 25px; //style-guide
+  width: 7.5rem; //style-guide
+  height: 1.56rem; //style-guide
   background-color: $white;
 }
 
 .mercury-border-bottom {
-  border-bottom: 1px solid $mercury;
+  border-bottom: 0.06rem solid $mercury;
 }

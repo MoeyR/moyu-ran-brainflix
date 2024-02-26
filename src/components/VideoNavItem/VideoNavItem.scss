@@ -4,8 +4,8 @@
 .video-nav-item{
     display: flex;
     justify-content: left;
-    margin-bottom: 13px;
-    max-width: 320px;
+    margin-bottom: 0.81rem;
+    max-width: 20rem;
 
     @include tablet{
         margin-bottom: $between-components-tablet;
@@ -16,10 +16,10 @@
     }
 
     &__image{
-        width: 110px;
-        height: 64px;
-        border-radius: 5px;
-        margin-right: 15px;
+        width: 6.875rem;
+        height: 4rem;
+        border-radius: 0.3125rem;
+        margin-right: 0.9375rem;
     }
 
     .video-nav-text-wrap{
