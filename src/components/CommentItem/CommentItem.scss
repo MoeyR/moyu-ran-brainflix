@@ -70,8 +70,11 @@
     }
 }
 
-li.user-comments:last-of-type {
-    border-bottom: none;
+@include desktop{
+    li.user-comments:last-of-type {
+        border-bottom: none;
+    }
+    
 }
 
 
