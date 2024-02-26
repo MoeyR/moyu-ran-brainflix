@@ -165,12 +165,12 @@
             padding-bottom: $between-components-mobile;
 
             @include tablet {
-                margin: 1rem;
+                margin: 1.25rem 1.25rem 0 1.25rem;
             }
 
             @include desktop{
                 margin: 0;
-                padding: 1rem 0;
+                padding: 1.25rem 0;
             }
 
             &__icon{
