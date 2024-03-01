@@ -22,7 +22,9 @@ function App() {
             <video className='video-section__player' controls poster={activeVideo.image}></video>
         </section>
         <section className='video-details-nav-wrap'>
+          {/* VideoDetails component for fetching and displaying details and comments sections */}
           <VideoDetails activeVideo={activeVideo}/>
+          {/* VideoNavList component for displaying the side videos navigation bar */}
           <VideoNavList videos={videosArr}
             activeVideo={activeVideo}
             updateActiveVideo={updateActiveVideo}/>
