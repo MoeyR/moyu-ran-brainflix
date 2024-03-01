@@ -23,9 +23,9 @@ function App() {
         </section>
         <section className='video-details-nav-wrap'>
           {/* VideoDetails component for fetching and displaying details and comments sections */}
-          <VideoDetails activeVideo={activeVideo}/>
+          <VideoDetails />
           {/* VideoNavList component for displaying the side videos navigation bar */}
-          <VideoNavList videos={videosArr}
+          <VideoNavList
             activeVideo={activeVideo}
             updateActiveVideo={updateActiveVideo}/>
         </section>
