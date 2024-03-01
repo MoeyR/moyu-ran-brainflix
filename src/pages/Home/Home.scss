@@ -1,0 +1,31 @@
+// @use './styles/partials/font' as *;
+// @use './styles/partials/variable' as *;
+// @use './styles/partials/mixin' as *;
+// @use './styles/partials/reset';
+// @use './styles/partials/global';
+
+
+// .video-section {
+//   background-color: black;
+
+//   @include tablet {
+//     padding: 0 4.5%;
+//   }
+
+//   &__player {
+//     display: block;
+//     margin: 0 auto;
+//     width: 100%;
+//     max-width: 53.13rem;
+    
+//   }
+// }
+
+// .video-details-nav-wrap{
+//   max-width: 68.88rem;
+//   margin: 0 auto;
+
+//   @include desktop{
+//     @include flex-center;
+//   }
+// }
