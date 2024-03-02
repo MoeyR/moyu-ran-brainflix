@@ -1,33 +1,68 @@
 import VideoNavList from '../../components/VideoNavList/VideoNavList.jsx'
 import VideoDetails from '../../components/VideoDetails/VideoDetails.jsx';
-import { useState } from 'react';
+import { apiClient } from '../../utils/brain-flix-api';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-function Home() {
+
+function Home({firstVideoId}) {
+
+    //To Be Comment Out After
     const [activeVideo, setActiveVideo] = useState([]);
+    function updateActiveVideo(clidedId){
+        //const videoToStage = videosArr.find((video)=>video.id===clidedId);
+        setActiveVideo(activeVideo);
+    }
 
-  function updateActiveVideo(clidedId){
-    //const videoToStage = videosArr.find((video)=>video.id===clidedId);
-    setActiveVideo(activeVideo);
-  }
+    const params = useParams();
+    const [videoDetails, setVideoDetails] = useState(null);
+    //const [comments, setComments] = useState([]);
+    const [dataLoading, setDataLoading] = useState(true);
+    const [hasError, setHasError] = useState(false);
+
+    //Set initial active video id to be the first video's id
+    let activeVideoId = params.videoId;
+    if(!activeVideoId){
+        activeVideoId = firstVideoId;
+        
+    }
+    useEffect(()=>{
+        const fetchVideoDetails = async ()=>{
+            try {
+                const videoResponse = await apiClient.getVideoDetails(activeVideoId);
+                setDataLoading(false);
+                setVideoDetails(videoResponse);
+                //setComments(videoResponse.comments);
+            } catch (error) {
+                setDataLoading(false);
+                setHasError(true);
+            }
+        }
+        fetchVideoDetails();
+    },[activeVideoId])
+
+    if (hasError) {
+        return <p>Unable to access video details right now. Please try again later.</p>
+    }
+
+    if (dataLoading) {
+        return <p>Loading video details...</p>
+    }
 
     return (
-        <>
-
-            <main>
-                <section className='video-section'>
-                    <video className='video-section__player' controls poster={activeVideo.image}></video>
-                </section>
-                <section className='video-details-nav-wrap'>
-                    {/* VideoDetails component for fetching and displaying details and comments sections */}
-                    <VideoDetails />
-                    {/* VideoNavList component for displaying the side videos navigation bar */}
-                    <VideoNavList
-                    activeVideo={activeVideo}
-                    updateActiveVideo={updateActiveVideo}/>
-                </section>
-            </main>
-        </>
-      
+        <main>
+        <section className='video-section'>
+            <video className='video-section__player' controls poster={videoDetails.image}></video>
+        </section>
+        <section className='video-details-nav-wrap'>
+            {/* VideoDetails component for fetching and displaying details and comments sections */}
+            <VideoDetails videoDetails={videoDetails}/>
+            {/* VideoNavList component for displaying the side videos navigation bar */}
+            <VideoNavList
+              activeVideo={activeVideo}
+              updateActiveVideo={updateActiveVideo}/>
+        </section>
+      </main>
     )
 }
 

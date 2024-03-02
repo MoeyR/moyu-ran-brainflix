@@ -3,7 +3,7 @@ import './VideoNavList.scss';
 import { useState, useEffect } from 'react';
 import { apiClient } from '../../utils/brain-flix-api';
 
-function VideoNavList({activeVideo, updateActiveVideo}){
+function VideoNavList({activeVideo}){
     const [videos, setVideos] = useState([]);
     const [dataLoading, setDataLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -39,8 +39,7 @@ function VideoNavList({activeVideo, updateActiveVideo}){
                     <VideoNavItem 
                         key={video.id}
                         video={video}
-                        isClicked={video.id === activeVideo.id}
-                        updateActiveVideo={updateActiveVideo}/>
+                        isClicked={video.id === activeVideo.id}/>
                 );
             })}
         </ul>

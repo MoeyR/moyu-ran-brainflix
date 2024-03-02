@@ -10,7 +10,9 @@ function Header(){
             </Link>
             <section className='search-botton-icon-wrap'>
                 <input className='header__search-bar' type="search" placeholder="Search" />
-                <button className='default-button header__upload-button' >UPLOAD</button>
+                <Link to='/upload'>
+                    <button className='default-button header__upload-button' >UPLOAD</button>
+                </Link>
                 <div className='header__icon user-icon'></div>
             </section>
             
