@@ -3,8 +3,8 @@ import CommentList from '../CommentList/CommentList';
 
 function VideoDetails({videoDetails}){
 
-    const {title, channel, timestamp, views, likes, description, comments} = videoDetails;
-    
+    const {title, channel, timestamp, views, likes, description} = videoDetails;
+    console.log(videoDetails.comments)
     return (
          <section className='video-details-comemnts-section'>
             {/* --- Video Details Section --- */}
@@ -27,7 +27,7 @@ function VideoDetails({videoDetails}){
                     </div>
                 </section>
                 <p className='video-details__description'>{description}</p>
-                <h3 className='video-details__comments-number'>{comments.length} Comments</h3>
+                <h3 className='video-details__comments-number'>{videoDetails.comments.length} Comments</h3>
             </section>
             {/* --- Video Comments Section --- */}
             <section className='video-comments'>
@@ -35,7 +35,7 @@ function VideoDetails({videoDetails}){
                     <div className='add-comment__icon user-icon'></div>
                     <section className='add-comment-input-button-wrap'>
                         <div className='add-comment-input-wrap'>
-                            <p className='add-comment__title'>JOIN THE CONVERSATION</p>
+                            <h2 className='add-comment__title'>JOIN THE CONVERSATION</h2>
                             <textarea className='add-comment__input-bar' placeholder="Add a new comment"></textarea>
                         </div>
                         <button className='default-button add-comment__button' >COMMENT</button>
@@ -43,7 +43,7 @@ function VideoDetails({videoDetails}){
                 </section>
 
                 <section>
-                    <CommentList comments={comments}/>
+                    <CommentList comments={videoDetails.comments}/>
                 </section>
             </section>
         </section>

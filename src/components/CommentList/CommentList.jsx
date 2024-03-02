@@ -5,11 +5,11 @@ function CommentList({comments}){
 
     return (
         <ul className='comment-list'>
-            {comments.map((comment)=>{
-                return (
-                  <CommentItem key={comment.id} comment={comment}/>
-                );
-            })}
+             {comments.map((comment)=>{
+                 return (
+                   <CommentItem key={comment.id} comment={comment}/>
+                 );
+             })}
         </ul>
     );
 }

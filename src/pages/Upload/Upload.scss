@@ -1,0 +1,127 @@
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixin' as *;
+@use '../../styles/partials/font' as *;
+
+
+.upload-section{
+    border-top: .125rem solid $mercury;
+    padding: 0 $side-margin-mobile;
+    max-width: 67rem;
+    @include tablet{
+        padding: 0 $side-margin-tablet;
+    }
+    @include desktop{
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    &__title{
+        margin: $before-headline-mobile 0;
+        @include page-header-mobile;
+
+        @include tablet{
+            @include page-header-tablet;
+            margin: 2.6rem 0 1.8rem 0;
+            line-height: 2rem;
+        }
+    }
+}
+
+
+.form{
+    @include tablet{
+        border-top: .125rem solid $mercury;
+        padding: 1.8rem 0;
+    }
+
+    .form-image-inputs-wrap{
+        @include desktop{
+            @include flex-space-between;
+        }
+    }
+
+    &__item-label{
+        @include section-header-mobile;
+        color: $silver;
+        padding-bottom: 0.19rem;
+        font-weight: 600;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
+    }
+
+    &__item-label{
+        display: block;
+        margin-bottom: $between-components-mobile;
+
+        @include tablet{
+            margin-bottom: $between-components-tablet;
+        }
+    }
+
+    &__thumbnail-image{
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 23.5rem;
+
+        @include tablet {
+            height: 12.875rem;
+        }
+    }
+
+    &__item-input{
+        width: 100%;
+        height: 2.5rem;
+        display: block;
+        border-radius: 0.25rem; //style-guide
+        border: 0.06rem solid $mercury;
+        background-color: $alabaster;
+        outline: none;
+        resize: none;
+        padding: 0.7rem 1rem;
+
+        @include desktop{
+            width: 41.5rem;
+        }
+
+        &::placeholder {
+           font-size: 0.85rem;
+            font-family: "Avenir-Next";
+            color: $brainFlix-black;
+        }
+
+        &:focus {
+            border: 0.13rem solid $brainFlix-blue;
+        }
+
+
+        &--textarea{
+            height: 5.5rem;
+        }
+    }
+
+    &__buttons-wrap{
+        @include tablet{
+            border-top: .125rem solid $mercury;
+            padding: $between-components-tablet 0;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__publish-button{
+        background-image: url(../../assets/images/icons/upload.svg);
+        background-repeat: no-repeat;
+        background-position: 0.56rem 0.69rem;
+        background-size: 1.25rem;
+    }
+
+    &__cancel-button{
+        background-color: $white;
+        color: $brainFlix-blue;
+        font-weight: 600;
+    }
+
+}

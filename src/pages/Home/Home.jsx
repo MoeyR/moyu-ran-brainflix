@@ -23,8 +23,8 @@ function Home({firstVideoId}) {
     //Set initial active video id to be the first video's id
     let activeVideoId = params.videoId;
     if(!activeVideoId){
-        activeVideoId = firstVideoId;
-        
+        //activeVideoId = firstVideoId;
+        activeVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"
     }
     useEffect(()=>{
         const fetchVideoDetails = async ()=>{
