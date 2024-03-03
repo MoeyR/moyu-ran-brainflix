@@ -1,14 +1,10 @@
 import './VideoNavItem.scss';
 import { Link } from 'react-router-dom';
 
-function VideoNavItem({video, isClicked}) {
-    let liClassName = 'video-nav-item'
-    if(isClicked){
-        liClassName += ' video-nav-item--clicked'
-    }
+function VideoNavItem({video}) {
 
     return (
-        <li className={liClassName}>
+        <li className='video-nav-item'>
             <Link to={`/videos/${video.id}`}>
                 <img 
                     className='video-nav-item__image' 

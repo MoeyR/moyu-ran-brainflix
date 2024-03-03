@@ -4,7 +4,7 @@ import CommentList from '../CommentList/CommentList';
 function VideoDetails({videoDetails}){
 
     const {title, channel, timestamp, views, likes, description} = videoDetails;
-    console.log(videoDetails.comments)
+    //console.log(videoDetails.comments)
     return (
          <section className='video-details-comemnts-section'>
             {/* --- Video Details Section --- */}

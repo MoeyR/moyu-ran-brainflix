@@ -7,13 +7,6 @@ import { useParams } from 'react-router-dom';
 
 function Home({firstVideoId}) {
 
-    //To Be Comment Out After
-    const [activeVideo, setActiveVideo] = useState([]);
-    function updateActiveVideo(clidedId){
-        //const videoToStage = videosArr.find((video)=>video.id===clidedId);
-        setActiveVideo(activeVideo);
-    }
-
     const params = useParams();
     //const [comments, setComments] = useState([]);
     const [videoDetails, setVideoDetails] = useState(null);
@@ -62,9 +55,7 @@ function Home({firstVideoId}) {
             {/* VideoDetails component for fetching and displaying details and comments sections */}
             <VideoDetails videoDetails={videoDetails}/>
             {/* VideoNavList component for displaying the side videos navigation bar */}
-            <VideoNavList
-              activeVideo={activeVideo}
-              updateActiveVideo={updateActiveVideo}/>
+            <VideoNavList activeVideoId={activeVideoId}/>
         </section>
       </main>
     )

@@ -7,12 +7,12 @@ import { useState, useEffect } from 'react';
 import { apiClient } from './utils/brain-flix-api.js';
 
 function App() {
-  const [ffirstVideoId, setffirstVideoId] = useState([]);
+  const [firstVideoIdId, setfirstVideoIdId] = useState([]);
   useEffect(()=>{
     const fetchVideoList = async ()=>{
             try {
                 const videoList = await apiClient.getVideos();
-                setffirstVideoId(videoList[0].id);
+                setfirstVideoIdId(videoList[0].id);
             } catch (error) {
                 console.log(`fetchVideoList failed, ${error}`)
             }
@@ -26,8 +26,8 @@ function App() {
         <Header/>   
         <Routes>
           <Route path='/upload' element={<Upload/>}></Route>
-          <Route path='/' element={<Home ffirstVideoId={ffirstVideoId}/>} />
-          <Route path='/videos/:videoId' element={<Home ffirstVideoId={ffirstVideoId}/>}/>
+          <Route path='/' element={<Home firstVideoIdId={firstVideoIdId}/>} />
+          <Route path='/videos/:videoId' element={<Home firstVideoIdId={firstVideoIdId}/>}/>
         </Routes>
       </BrowserRouter>
       

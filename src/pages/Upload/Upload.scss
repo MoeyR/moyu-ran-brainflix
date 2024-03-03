@@ -127,6 +127,10 @@
             background-color: $brainFlix-blue;
             color: $white;
         }
+
+        @include tablet{
+            margin-right: $between-components-tablet;
+        }
     }
 
     .successMessage{
