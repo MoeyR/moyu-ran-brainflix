@@ -5,31 +5,43 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-function Home({firstVideoId}) {
+function Home() {
 
     const params = useParams();
-    //const [comments, setComments] = useState([]);
+    const [firstVideoId, setfirstVideoId] = useState(null);
     const [videoDetails, setVideoDetails] = useState(null);
     const [dataLoading, setDataLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+    
+    useEffect(()=>{
+        const fetchFirstVideoId = async ()=>{
+                try {
+                    const videoList = await apiClient.getVideos();
+                    setfirstVideoId(videoList[0].id);
+                } catch (error) {
+                    console.log(`fetchFirstVideoId failed, ${error}`)
+                }
+            }
+            fetchFirstVideoId();
+    }, [])
 
     //Set initial active video id to be the first video's id
     let activeVideoId = params.videoId;
     if(!activeVideoId){
-        //activeVideoId = firstVideoId;
-        //console.log(activeVideoId)
-        activeVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"   
+        activeVideoId = firstVideoId; 
+        
     }
 
     useEffect(()=>{
         const fetchVideoDetails = async ()=>{
             try {
+                if (!activeVideoId) return;
+
                 const videoResponse = await apiClient.getVideoDetails(activeVideoId);
                 setDataLoading(false);
                 setVideoDetails(videoResponse);
-                //console.log(activeVideoId)
-                //console.log(videoResponse.comments)
-                //setComments(videoResponse.comments);
+                console.log(activeVideoId)
+                console.log(videoResponse)
             } catch (error) {
                 setDataLoading(false);
                 setHasError(true);

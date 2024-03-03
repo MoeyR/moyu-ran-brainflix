@@ -1,10 +1,10 @@
 import './VideoDetails.scss';
 import CommentList from '../CommentList/CommentList';
+import AddCommentForm from '../AddCommentForm/AddCommentForm';
 
 function VideoDetails({videoDetails}){
 
     const {title, channel, timestamp, views, likes, description} = videoDetails;
-    //console.log(videoDetails.comments)
     return (
          <section className='video-details-comemnts-section'>
             {/* --- Video Details Section --- */}
@@ -27,21 +27,11 @@ function VideoDetails({videoDetails}){
                     </div>
                 </section>
                 <p className='video-details__description'>{description}</p>
-                {/* <h3 className='video-details__comments-number'>{videoDetails.comments.length} Comments</h3> */}
+                `<h3 className='video-details__comments-number'>{videoDetails.comments.length} Comments</h3>
             </section>
             {/* --- Video Comments Section --- */}
             <section className='video-comments'>
-                <section className='add-comment mercury-border-bottom'>
-                    <div className='add-comment__icon user-icon'></div>
-                    <section className='add-comment-input-button-wrap'>
-                        <div className='add-comment-input-wrap'>
-                            <h2 className='add-comment__title'>JOIN THE CONVERSATION</h2>
-                            <textarea className='add-comment__input-bar' placeholder="Add a new comment"></textarea>
-                        </div>
-                        <button className='default-button add-comment__button' >COMMENT</button>
-                    </section>
-                </section>
-
+                <AddCommentForm />
                 <section>
                     <CommentList comments={videoDetails.comments}/>
                 </section>

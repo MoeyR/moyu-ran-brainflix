@@ -1,0 +1,89 @@
+@use '../../styles/partials/variable' as *;
+@use '../../styles/partials/mixin' as *;
+
+ .add-comment{
+    @include flex-space-between;
+    padding-bottom: $between-components-mobile;
+
+    @include tablet {
+        margin: 1.25rem 1.25rem 0 1.25rem;
+    }
+
+    @include desktop{
+        margin: 0;
+        padding: 1.25rem 0;
+    }
+
+    &__icon{
+        margin-top: 1.4rem;
+    }
+
+    &-input-button-wrap{
+        width: 83%;
+
+        @include tablet {
+            width: 93%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+    }
+
+    &__title{
+        @include section-header-mobile;
+        color: $silver;
+        padding-bottom: 0.19rem;
+        font-weight: 600;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
+    }
+
+    &__input-bar{
+        width: 100%;
+        height: 6.25rem;
+        border-radius: 0.25rem; //style-guide
+        border: 0.06rem solid $mercury;
+        padding: 0.63rem;
+        resize: none;
+
+        @include tablet {
+            width: 28.13rem;
+            height: 2.5rem;
+        }
+
+        &:focus {
+            outline: none;
+            border: 0.13rem solid $brainFlix-blue;
+        }
+
+        &::placeholder{
+            color: $brainFlix-black;
+            font-family: 'Avenir-Next';
+            font-size: 0.81rem;
+        }
+        
+        &--error {
+            border: 0.06rem solid #D22D2D;
+        }
+    }
+
+    &__button{
+        width: 100%;
+        margin-top: 0.63rem;
+        background-image: url(../../assets/images/icons/add_comment.svg);
+        background-repeat: no-repeat;
+        background-position: 0.56rem 0.75rem;
+        background-size: 1.19rem;
+
+        @include tablet {
+            width: 9.69rem;
+        }
+
+        @include desktop {
+            margin-right: $between-components-tablet;
+        }
+    }
+}
