@@ -15,8 +15,8 @@ function Home({firstVideoId}) {
     }
 
     const params = useParams();
-    const [videoDetails, setVideoDetails] = useState(null);
     //const [comments, setComments] = useState([]);
+    const [videoDetails, setVideoDetails] = useState(null);
     const [dataLoading, setDataLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
@@ -24,14 +24,18 @@ function Home({firstVideoId}) {
     let activeVideoId = params.videoId;
     if(!activeVideoId){
         //activeVideoId = firstVideoId;
-        activeVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"
+        //console.log(activeVideoId)
+        activeVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"   
     }
+
     useEffect(()=>{
         const fetchVideoDetails = async ()=>{
             try {
                 const videoResponse = await apiClient.getVideoDetails(activeVideoId);
                 setDataLoading(false);
                 setVideoDetails(videoResponse);
+                //console.log(activeVideoId)
+                //console.log(videoResponse.comments)
                 //setComments(videoResponse.comments);
             } catch (error) {
                 setDataLoading(false);

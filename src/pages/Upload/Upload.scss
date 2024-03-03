@@ -122,6 +122,15 @@
         background-color: $white;
         color: $brainFlix-blue;
         font-weight: 600;
+
+        &:hover{
+            background-color: $brainFlix-blue;
+            color: $white;
+        }
+    }
+
+    .successMessage{
+        color: green;
     }
 
 }

@@ -27,7 +27,7 @@ function VideoDetails({videoDetails}){
                     </div>
                 </section>
                 <p className='video-details__description'>{description}</p>
-                <h3 className='video-details__comments-number'>{videoDetails.comments.length} Comments</h3>
+                {/* <h3 className='video-details__comments-number'>{videoDetails.comments.length} Comments</h3> */}
             </section>
             {/* --- Video Comments Section --- */}
             <section className='video-comments'>
