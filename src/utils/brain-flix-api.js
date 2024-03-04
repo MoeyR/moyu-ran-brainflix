@@ -35,7 +35,7 @@ class BrainFlixApi {
 
   async postComment(id, comment) {
     try {
-      const res = await axios.post(
+        await axios.post(
         `${this.baseUrl}/videos/${id}/comments`,
         comment,
         {
