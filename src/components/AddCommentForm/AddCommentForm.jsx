@@ -10,16 +10,22 @@ function AddCommentForm({activeVideo, showUpdatedComments}) {
   const [invalidInput, setInvalidInput] = useState(false);
   const textAreaRef = useRef();
 
+  let inputClassName = "add-comment__input-bar";
+  if(invalidInput){
+    inputClassName += " add-comment__input-bar--error"
+  }
   const handleChangeComment =(event)=>{
     setUserComment(event.target.value);
   }
 
   const submitComment = async (event)=>{
     event.preventDefault();
+    //Post new comment
     if(userComment.trim() === ""){
       setInvalidInput(true);
     }else{
       try {
+        
         const newComment = {
           name: "Mohan Muruge",
           comment: userComment
@@ -35,7 +41,7 @@ function AddCommentForm({activeVideo, showUpdatedComments}) {
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 2500);
-        
+
       } catch (error) {
         setHasError(true);
       }
@@ -51,7 +57,7 @@ function AddCommentForm({activeVideo, showUpdatedComments}) {
           <h2 className="add-comment__title">JOIN THE CONVERSATION</h2>
           <textarea
             ref={textAreaRef}
-            className="add-comment__input-bar"
+            className={inputClassName}
             placeholder="Add a new comment"
             onChange={handleChangeComment}
           ></textarea>

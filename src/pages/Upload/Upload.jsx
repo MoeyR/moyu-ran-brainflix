@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 
 function Upload() {
   const navigate = useNavigate();
-  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [videoTitle, setVideoTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [invalidInput, setInvalidInput] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChangeTitle = (event)=>{
     setVideoTitle(event.target.value);
@@ -18,13 +20,24 @@ function Upload() {
     setDescription(event.target.value);
   }
 
+
   const publishVideo = (event) => {
     event.preventDefault();
-    setSubmitSuccess(true);
 
-    setTimeout(() => {
-      navigate("/");
-    }, 3000);
+    if(videoTitle.trim() === ""){
+      setInvalidInput(true);
+      setErrorMessage("Video title");
+    }else if(description.trim() === ""){
+      setInvalidInput(true);
+      setErrorMessage("Video description");
+    }else{
+      setSubmitSuccess(true);
+      setInvalidInput(false);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    }
+    
   };
 
   const clearForm = ()=>{
@@ -63,6 +76,9 @@ function Upload() {
                 onChange={handleChangeDescription}
               ></textarea>
             </label>
+            {invalidInput && (
+                <div className="error-message">{errorMessage} is required</div>
+            )}
           </section>
         </section>
         <section className="form__buttons-wrap">
@@ -74,9 +90,9 @@ function Upload() {
           </Link>
           
           {submitSuccess && (
-            <div className="successMessage">
-              Successfully published. Taking you to the HOME page
-            </div>
+              <div className="success-message">
+                Successfully published. Taking you to the HOME page
+              </div>
           )}
         </section>
       </form>

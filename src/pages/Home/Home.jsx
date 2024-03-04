@@ -84,7 +84,7 @@ function Home() {
         ></video>
       </section>
       <section className="video-details-nav-wrap">
-        {/* VideoDetails component for fetching and displaying details and comments sections */}
+        {/* VideoDetails component for displaying video details and comments sections */}
         <VideoDetails
           videoDetails={videoDetails}
           showUpdatedComments={showUpdatedComments}

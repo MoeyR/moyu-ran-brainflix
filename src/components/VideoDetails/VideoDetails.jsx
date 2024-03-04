@@ -34,6 +34,7 @@ function VideoDetails({ videoDetails, showUpdatedComments }) {
       </section>
       {/* --- Video Comments Section --- */}
       <section className="video-comments">
+        {/* AddCommentForm component for adding and posting new comment*/}
         <AddCommentForm
           activeVideo={videoDetails}
           showUpdatedComments={showUpdatedComments}
