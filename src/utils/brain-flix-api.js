@@ -38,6 +38,24 @@ class BrainFlixApi {
     }
 
 
+    async postComment(id, comment){
+        try {
+            const res = await axios.post(
+                `${this.baseUrl}/videos/${id}/comments`, comment,
+                {
+                    params: {
+                        "Content-Type": "application/json",
+                        "api_key": `${this.apikey}`
+                    }
+                }
+            )
+            
+        } catch (error) {
+            console.log(`POST comment request failed, ${error}`);
+        }
+    }
+
+
 }
 
 
