@@ -89,7 +89,7 @@ function Home() {
           videoDetails={videoDetails}
           showUpdatedComments={showUpdatedComments}
         />
-        {/* VideoNavList component for displaying the side videos navigation bar */}
+        {/* VideoNavList component for displaying the side videos section */}
         <VideoNavList activeVideoId={activeVideoId} />
       </section>
     </main>
