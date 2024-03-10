@@ -8,9 +8,7 @@ class BrainFlixApi {
   //Get All Videos
   async getVideos() {
     try {
-      const response = await axios.get(
-        `${this.baseUrl}/videos`
-      );
+      const response = await axios.get(`${this.baseUrl}/videos`);
       return response.data;
     } catch (error) {
       console.log(`GET videos request failed, ${error}`);
@@ -26,12 +24,17 @@ class BrainFlixApi {
     }
   }
 
+  async postVideos(video) {
+    try {
+      await axios.post(`${this.baseUrl}/videos`, video);
+    } catch (error) {
+      console.log(`POST video request failed, ${error}`);
+    }
+  }
+
   async postComment(id, comment) {
     try {
-        await axios.post(
-        `${this.baseUrl}/videos/${id}/comments`,
-        comment
-      );
+      await axios.post(`${this.baseUrl}/videos/${id}/comments`,comment);
     } catch (error) {
       console.log(`POST comment request failed, ${error}`);
     }
