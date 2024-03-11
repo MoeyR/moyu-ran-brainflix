@@ -7,7 +7,9 @@ function CommentList({comments}){
         <ul className='comment-list'>
              {comments.map((comment)=>{
                  return (
-                   <CommentItem key={comment.id} comment={comment}/>
+                   <CommentItem 
+                   key={comment.id} 
+                   comment={comment}/>
                  );
              })}
         </ul>

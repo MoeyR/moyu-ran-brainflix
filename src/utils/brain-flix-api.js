@@ -24,9 +24,13 @@ class BrainFlixApi {
     }
   }
 
-  async postVideos(video) {
+  async postVideo(video) {
     try {
-      await axios.post(`${this.baseUrl}/videos`, video);
+      await axios.post(`${this.baseUrl}/videos`, video, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
     } catch (error) {
       console.log(`POST video request failed, ${error}`);
     }
