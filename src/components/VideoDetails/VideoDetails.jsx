@@ -27,7 +27,7 @@ function VideoDetails({ videoDetails, showUpdatedComments }) {
             </div>
           </div>
         </section>
-        <p className="video-details__description">{description}</p>`
+        <p className="video-details__description">{description}</p>
         <h3 className="video-details__comments-number">
           {videoDetails.comments.length} Comments
         </h3>
